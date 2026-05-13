@@ -1,121 +1,90 @@
-# KSP 7.0 — Krittika Selection Problems
-## Gravitational Lensing & Orbital Mechanics
-
-**Krittika Astronomy Club, IIT Bombay — Selection Round, May 2026**
-
----
-
-## Project Overview
-
-This repository contains complete solutions to the KSP 7.0 selection problems,
-covering two independent assignments:
-
-- **Theory Assignment** — Five analytical problems in gravity-assist mechanics,
-  hyperbolic scattering, and Hohmann transfer orbital mechanics. Derived from
-  first principles with explicit frame bookkeeping, dimensional analysis, and
-  numerical cross-validation.
-
-- **Coding Assignment** — An end-to-end gravitational lensing simulation
-  pipeline, from classical thin-lens optics through Einstein ring formation,
-  inverse source reconstruction, and de-lensing of a real Hubble image.
+# KSP 7.0 Selection Assignment
+**Krittika, IIT Bombay — May 2026**
 
 ---
 
 ## Repository Structure
 
 ```
-.
-├── KSP_Theory_Solutions.tex       # LaTeX source for the theory document
-├── KSP_Theory_Solutions.pdf       # Compiled theory PDF (15 pages)
-├── KSP_Coding_Assignment.ipynb    # Main Jupyter notebook — all 7 parts + validation
-├── requirements.txt               # Python dependencies
-├── README.md                      # This file
-│
-└── [Generated outputs — created on notebook run]
-    ├── parta_thin_lens.png
-    ├── partb_lens_error.png
-    ├── partc_single_source.png
-    ├── partd_extended_source.png
-    ├── parte_einstein_ring.png
-    ├── partf_reconstruction.png
-    ├── partg_comparison.png
-    ├── partg_delensed.png
-    ├── validation_scattering.png
-    └── validation_hohmann.png
+KSP-7.0-Selection/
+├── README.md
+├── requirements.txt
+├── CHANGELOG.md
+├── theory/
+│   ├── KSP_Theory_Solutions.tex     # LaTeX source
+│   └── KSP_Theory_Solutions.pdf     # Compiled PDF (9 pages)
+├── notebook/
+│   ├── KSP_Coding_Assignment.ipynb  # Main notebook (13 code cells)
+│   ├── data/
+│   │   ├── lensed_points.csv          # 800 lensed image pairs (θ/θ_E units)
+│   │   └── simulated_lensed_galaxy.bmp  # Synthetic Einstein ring image (512×512)
+│   └── output/                        # Generated figures (auto-created)
 ```
+
+---
+
+## Quick Start
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run the notebook
+cd notebook/
+jupyter lab KSP_Coding_Assignment.ipynb
+# Select: Kernel → Restart & Run All
+```
+
+All figures are saved to `notebook/output/` automatically.
 
 ---
 
 ## Theory Assignment
 
-| Question | Topic | Key Result |
-|----------|-------|------------|
-| Q1 | Head-on gravity assist (1-D) | v_f = v_i + 2v_p |
-| Q2 | Arbitrary-angle gravity assist | Quadratic formula in planet-frame speeds |
-| Q3 | Hyperbolic (Rutherford) scattering | Delta = 2·arctan(GM/bv²); r_min closed form |
-| Q4 | Hohmann transfer: Earth to Jupiter | Delta-v, transfer time, phase angle |
-| Q5 | Full Jupiter flyby mission analysis | Closest approach, Neptune angular separation |
-
-The compiled PDF includes TikZ diagrams for all key geometries, dimensional analysis
-checks, physical justification of approximations, engineering constraints (Jupiter
-radiation belts), mission analogies (Voyager 2, Cassini), and numerical validation tables.
-
----
-
-## Coding Assignment
-
-| Part | Task | Method |
-|------|------|--------|
-| (a) | Classical thin-lens optics | Lens equation, ray diagrams |
-| (b) | Gravitational lensing theory | Exact vs. approximate solution, % error |
-| (c) | Single point source lensing | 2-D forward lensing map |
-| (d) | Extended disk source | Uniform disk sampling + per-point lens |
-| (e) | Einstein ring formation | Five-panel sequential alignment |
-| (f) | Inverse problem | Algebraic inverse reconstruction |
-| (g) | Bonus: De-lens Hubble LRG 3-757 | Pixel remap, bicubic interpolation |
-| Val. | Numerical validation | Orbit integration vs. analytical results |
-
-**Key results:**
-- Part (f) residual: mean 3.6e-16 theta_E (floating-point exact)
-- Validation 1: scattering angle agreement <0.05% over full parameter range
-- Validation 2: Hohmann Delta-v and transfer time agreement <0.01%
-
----
-
-## Installation
-
+Compiled with:
 ```bash
-pip install -r requirements.txt
-```
-
-Python 3.9+ recommended. Tested on Python 3.11.
-
----
-
-## Execution
-
-### Notebook
-
-```bash
-jupyter notebook KSP_Coding_Assignment.ipynb
-```
-
-Use **Kernel → Restart & Run All** for a clean top-to-bottom execution.
-All imports, constants, and figure generation are self-contained.
-
-Two external data files are required (update paths in the notebook's first cell):
-- `lensed_points.csv` — 800 lensed image-position pairs
-- `hubble-lrg3757.bmp` — Hubble LRG 3-757 image (NASA public domain)
-
-### Theory PDF
-
-```bash
+cd theory/
 pdflatex KSP_Theory_Solutions.tex
-pdflatex KSP_Theory_Solutions.tex   # second pass for TOC
+pdflatex KSP_Theory_Solutions.tex   # second pass for cross-references
 ```
-
-Requires TeX Live with tikz, amsmath, physics, mdframed, booktabs, pgfplots.
+Requires: `texlive-latex-extra`, `texlive-science` (for `physics` package).
 
 ---
 
-*All derivations and code are original work. External data sources are cited in the notebook.*
+## Notebook Coverage
+
+| Part | Description | Key result |
+|------|-------------|-----------|
+| Setup | Constants, lensing geometry | d_L=4 kpc, d_S=8 kpc, d_LS=4 kpc (microlensing) |
+| (a) | Thin-lens ray diagrams | Image table, two ray diagrams |
+| (b) | Gravitational lens theory | θ_E=2.21″ (galaxy), breakaway at β=1.78 θ_E |
+| (c) | Four source geometries | Image positions + magnification |
+| (d) | Extended source | Magnification map, arc morphology |
+| (e) | Einstein ring formation | 5-panel sequence β→0 |
+| (f) | Inverse reconstruction | Residuals ~10⁻⁸ θ_E |
+| (g) | De-lensing image | Source plane recovered |
+| Caustic | Critical curve & caustic | Point caustic at β=0 |
+| Mission | Trajectory plot | Earth→Jupiter→Neptune |
+| Val 1 | Scattering angle | Max error <1.12% vs DOP853 |
+| Val 2 | Hohmann transfer | Error <0.00001% vs DOP853 |
+
+---
+
+## Physical Scenario Notes
+
+**Lensing (parts b–f):**  
+Two physically distinct scenarios are used as appropriate:
+- *Microlensing* (parts c–f): M=1 M☉ at 4 kpc, source at 8 kpc → θ_E≈1 mas.  
+  Representative of OGLE/KMTNet survey geometry.
+- *Galaxy-scale* (part b): M=10¹² M☉ at 1 Gpc, source at 2.5 Gpc → θ_E≈2.2″.  
+  Representative of observed strong-lensing arcs.
+
+In both cases `d_LS = d_S − d_L < d_S` is enforced (the original submission had
+`d_LS = d_S`, which is geometrically impossible when the lens lies between observer
+and source).
+
+**Mission (Q5):** All values computed from first principles:
+- t₁ = 2.729 yr (Hohmann, verified to <0.00001% by DOP853)
+- Δ = 109.6° (Jupiter flyby deflection)
+- |v_f| = 24,154 m/s (post-flyby heliocentric speed)
+- t₂ from quadratic in Eq. (Q5-4) of theory document
