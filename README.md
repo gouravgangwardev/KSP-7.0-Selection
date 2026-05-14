@@ -7,7 +7,7 @@
 
 <div align="center">
 
-![Mission Trajectory](Coding_Assignment/output/mission_trajectory.png)
+<img width="1032" height="1062" alt="mission_trajectory" src="https://github.com/user-attachments/assets/1bb8f7e5-8b2a-49c1-8355-de79c940d93f" />
 
 *Heliocentric patched-conic trajectory: Earth → Hohmann arc → Jupiter gravity assist → Neptune coast (t_total ≈ 7.68 yr)*
 
@@ -92,7 +92,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Einstein Ring Formation](Coding_Assignment/output/parte_einstein_ring.png)
+<img width="2274" height="520" alt="parte_einstein_ring" src="https://github.com/user-attachments/assets/a8c4d72a-df30-45d2-8141-6a6846832926" />
 
 *Five-panel sequence: Einstein ring formation as source offset β_y/θ_E decreases from 1.5 → 0.01. At β = 0.01 θ_E, magnification μ ≈ 100.*
 
@@ -102,7 +102,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Extended Source Lensing](Coding_Assignment/output/partd_extended_source.png)
+<img width="1487" height="711" alt="partd_extended_source" src="https://github.com/user-attachments/assets/7e4b2778-8bf6-4c61-9021-cdf931bd4d76" />
 
 *Extended circular disk source (radius 0.3 θ_E) at offset (1.2, 0.6) θ_E. Left: arc morphology in the image plane. Right: total magnification map with Einstein radius contour (cyan).*
 
@@ -112,7 +112,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![BMP Galaxy De-lensing](Coding_Assignment/output/partg_comparison.png)
+<img width="1312" height="1182" alt="partg_comparison" src="https://github.com/user-attachments/assets/cab7b938-b7da-427a-805c-054dfe2d9048" />
 
 *Part (g): Four-panel de-lensing pipeline. Full lensed BMP → centre crop → binary ring mask → reconstructed source galaxy via inverse lensing map + bicubic interpolation.*
 
@@ -122,7 +122,8 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Caustic and Critical Curve](Coding_Assignment/output/caustic_critical.png)
+<img width="1248" height="624" alt="caustic_critical" src="https://github.com/user-attachments/assets/18049cba-1207-4693-9fdf-3711e50f64f4" />
+
 
 *Left: Critical curve in the image plane (Einstein ring |θ| = θ_E). Right: Corresponding caustic in the source plane — a degenerate point at β = 0, consequence of circular symmetry.*
 
@@ -145,7 +146,7 @@ Two independent numerical validations confirm the analytic theory:
 
 <div align="center">
 
-![Validation Scattering](Coding_Assignment/output/validation_scattering.png)
+<img width="1548" height="594" alt="validation_scattering" src="https://github.com/user-attachments/assets/267acf11-f767-4198-aa03-902a1394cf01" />
 
 </div>
 
@@ -160,7 +161,7 @@ Two independent numerical validations confirm the analytic theory:
 
 <div align="center">
 
-![Validation Hohmann](Coding_Assignment/output/validation_hohmann.png)
+<img width="912" height="944" alt="validation_hohmann" src="https://github.com/user-attachments/assets/fc66e03b-1904-4632-bb45-c03677320799" />
 
 </div>
 
