@@ -313,4 +313,18 @@ The microlensing geometry (OGLE/KMTNet regime, Galactic bulge) is used for all 2
 
 ---
 
+## Modeling Scope and Assumptions
+
+Several approximations are intentionally used throughout the repository:
+
+- patched-conic orbital dynamics,
+- two-body flyby treatment,
+- thin-lens gravitational lensing,
+- point-mass lens models,
+- finite Monte Carlo source sampling.
+
+These approximations are sufficient for the physical scales explored here and allow the analytical structure of the problems to remain visible. Effects such as non-spherical gravity fields, solar perturbations during flybys, cosmological angular-diameter distances, and lens substructure are not modeled explicitly.
+
+---
+
 *Krittika, The Astronomy Club of IIT Bombay — Selection Assignment 7.0 — May 2026*
