@@ -203,19 +203,41 @@ The Jupiter phase angle (θ_J ≈ 149.7° ahead of Earth at launch) and Neptune 
 
 ---
 
+## Flyby Geometry and Sensitivity
+
+The outgoing heliocentric trajectory depends strongly on the hyperbolic turning angle, which itself is controlled by the impact parameter and asymptotic approach velocity.
+
+Small changes in closest approach distance can produce significant changes in the post-encounter trajectory. This sensitivity is particularly visible in the Jupiter-to-Neptune transfer analysis, where the final orbital interception timing depends directly on the scattering geometry.
+
+---
+## Modeling Assumptions
+
+The orbital mechanics analysis is performed primarily within the patched-conic approximation. During each planetary encounter the spacecraft is treated as moving in a local two-body system dominated by the planet's gravity, while heliocentric motion is recovered through frame transformations.
+
+This approximation neglects:
+- solar perturbations during close flybys,
+- planetary oblateness,
+- atmospheric drag,
+- multi-body resonant effects,
+- finite burn durations.
+
+For the flyby geometries considered here these effects are small compared to the dominant gravitational scattering dynamics.
+
+---
+
 ## Validation Methodology
 
-The theory document does not validate its analytic results inline — that is the notebook's role. Instead, the theory provides:
+The theory document does not validate its analytic results inline — that is the nCoding Assignment's role. Instead, the theory provides:
 
 1. **Self-consistency checks:** Dimensional analysis at every equation (SI units tracked explicitly for Q5 coefficients A, B, C, D).
 
 2. **Limiting-case checks:** Circular orbit limit (e → 0) of vis-viva; μ_tot → 1 for u → ∞; Δ → π for b → 0 (head-on flyby).
 
-3. **Cross-referencing:** Q2 results (t₁, Δv₁) are referenced explicitly in Q5, so any error in Q2 propagates visibly to Q5. The notebook's Validation 2 then confirms both simultaneously.
+3. **Cross-referencing:** Q2 results (t₁, Δv₁) are referenced explicitly in Q5, so any error in Q2 propagates visibly to Q5. The Coding Assignment's Validation 2 then confirms both simultaneously.
 
 4. **Root rejection arguments:** The spurious quadratic root in Q5 is rejected on geometric grounds rather than by numerical inspection alone — this ensures the result is physically interpretable, not just numerically selected.
 
-The full validation (analytic vs DOP853) is documented in `notebook/README.md` and `notebook/output/README.md`.
+The full validation (analytic vs DOP853) is documented in `Coding Assignment/README.md` and `Coding Assignment/output/README.md`.
 
 ---
 
@@ -232,4 +254,19 @@ The full validation (analytic vs DOP853) is documented in `notebook/README.md` a
 
 ---
 
-*See `notebook/README.md` for the computational implementation of these derivations, and `notebook/output/README.md` for figure-by-figure scientific interpretation.*
+## Approximation Regime
+
+The analytical derivations prioritize closed-form structure and physical interpretation over high-fidelity mission design.
+
+The transfer calculations therefore should not be interpreted as precision ephemeris predictions. Real interplanetary navigation would require:
+- N-body propagation,
+- planetary ephemerides,
+- maneuver corrections,
+- relativistic timing corrections,
+- spacecraft-specific constraints.
+
+The present treatment instead focuses on the dominant orbital mechanics governing gravity-assist trajectories.
+
+---
+
+*See `Coding Assignment/README.md` for the computational implementation of these derivations, and `Coding Assignment/output/README.md` for figure-by-figure scientific interpretation.*
