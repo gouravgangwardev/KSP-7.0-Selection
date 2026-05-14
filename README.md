@@ -167,6 +167,16 @@ Two independent numerical validations confirm the analytic theory:
 
 ---
 
+## Numerical Modeling Notes
+
+The repository combines analytical orbital mechanics with numerical validation and gravitational lensing simulations. The computational components are designed to prioritize physical transparency, numerical stability, and reproducibility rather than maximal physical realism.
+
+Adaptive Runge–Kutta integration is used for orbital validation problems with tolerances selected to balance runtime and accuracy. Tighter tolerances were tested during development but produced negligible improvement relative to the physical uncertainties introduced by the simplified dynamical models.
+
+The gravitational lensing simulations use the standard thin-lens and point-mass approximations. These models reproduce the essential geometric behavior of weak lensing and Einstein ring formation while remaining computationally lightweight and visually interpretable.
+
+---
+
 ## Reproducibility Instructions
 
 ### Prerequisites
