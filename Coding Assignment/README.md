@@ -7,7 +7,7 @@
 ## Quick Start
 
 ```bash
-cd notebook/
+cd Coding Assignment/
 jupyter lab KSP_Coding_Assignment.ipynb
 # Kernel → Restart & Run All
 ```
@@ -370,6 +370,45 @@ t2 = (−b_c + √(b_c² − 4a_c c_c)) / (2a_c)   # positive physical root
 
 ---
 
+## Numerical Stability and Resolution
+
+The lensing simulations operate on discretized image and source planes. Resolution was selected to preserve visible lensing structure while maintaining reasonable execution time on standard hardware.
+
+Near caustics and near-perfect alignment, magnification gradients become extremely steep. In these regions small sampling errors can produce visible interpolation artifacts or pixel crowding. The simulations therefore prioritize stable qualitative reconstruction over exact photometric accuracy.
+
+---
+
+## Computational Tradeoffs
+
+Several implementation choices intentionally favor interpretability and reproducibility:
+
+- moderate grid resolutions,
+- explicit coordinate transforms,
+- direct Einstein-radius scaling,
+- adaptive numerical integration for validation problems,
+- lightweight interpolation schemes.
+
+More sophisticated approaches — such as adaptive mesh refinement, ray-shooting methods, or extended lens mass distributions — were intentionally avoided in order to keep the computational pipeline transparent.
+
+---
+
+## Approximation Limits
+
+The current implementation assumes:
+- thin-lens geometry,
+- static point-mass lenses,
+- weak-field deflection,
+- monochromatic imaging,
+- simplified source brightness distributions.
+
+As a result, the simulations do not capture:
+- microlensing variability,
+- lens substructure,
+- cosmological distance evolution,
+- shear fields,
+- chromatic observational effects.
+
+---
 ## Data Files
 
 ### `data/lensed_points.csv`
