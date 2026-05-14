@@ -7,7 +7,7 @@
 
 <div align="center">
 
-![Mission Trajectory](notebook/output/mission_trajectory.png)
+![Mission Trajectory](Coding_Assignment/output/mission_trajectory.png)
 
 *Heliocentric patched-conic trajectory: Earth → Hohmann arc → Jupiter gravity assist → Neptune coast (t_total ≈ 7.68 yr)*
 
@@ -92,7 +92,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Einstein Ring Formation](notebook/output/parte_einstein_ring.png)
+![Einstein Ring Formation](Coding_Assignment/output/parte_einstein_ring.png)
 
 *Five-panel sequence: Einstein ring formation as source offset β_y/θ_E decreases from 1.5 → 0.01. At β = 0.01 θ_E, magnification μ ≈ 100.*
 
@@ -102,7 +102,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Extended Source Lensing](notebook/output/partd_extended_source.png)
+![Extended Source Lensing](Coding_Assignment/output/partd_extended_source.png)
 
 *Extended circular disk source (radius 0.3 θ_E) at offset (1.2, 0.6) θ_E. Left: arc morphology in the image plane. Right: total magnification map with Einstein radius contour (cyan).*
 
@@ -112,7 +112,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![BMP Galaxy De-lensing](notebook/output/partg_comparison.png)
+![BMP Galaxy De-lensing](Coding_Assignment/output/partg_comparison.png)
 
 *Part (g): Four-panel de-lensing pipeline. Full lensed BMP → centre crop → binary ring mask → reconstructed source galaxy via inverse lensing map + bicubic interpolation.*
 
@@ -122,7 +122,7 @@ KSP-7.0-Selection/
 
 <div align="center">
 
-![Caustic and Critical Curve](notebook/output/caustic_critical.png)
+![Caustic and Critical Curve](Coding_Assignment/output/caustic_critical.png)
 
 *Left: Critical curve in the image plane (Einstein ring |θ| = θ_E). Right: Corresponding caustic in the source plane — a degenerate point at β = 0, consequence of circular symmetry.*
 
@@ -145,7 +145,7 @@ Two independent numerical validations confirm the analytic theory:
 
 <div align="center">
 
-![Validation Scattering](notebook/output/validation_scattering.png)
+![Validation Scattering](Coding_Assignment/output/validation_scattering.png)
 
 </div>
 
@@ -160,7 +160,7 @@ Two independent numerical validations confirm the analytic theory:
 
 <div align="center">
 
-![Validation Hohmann](notebook/output/validation_hohmann.png)
+![Validation Hohmann](Coding_Assignment/output/validation_hohmann.png)
 
 </div>
 
