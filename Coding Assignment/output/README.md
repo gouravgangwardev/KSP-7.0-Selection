@@ -1,4 +1,4 @@
-# notebook/output/ — Scientific Figure Appendix
+# Scientific Figure Appendix
 
 > Every figure in this directory is generated automatically by running `KSP_Coding_Assignment.ipynb` (Kernel → Restart & Run All). This appendix explains what each figure shows, the physics it encodes, how to read it, and its numerical significance.
 
