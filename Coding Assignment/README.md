@@ -1,4 +1,4 @@
-# notebook/ — Computational Pipeline
+# — Computational Pipeline
 
 > A scientific software project implementing gravitational lensing and orbital mechanics from first principles, with DOP853 numerical validation and bicubic image reconstruction.
 
