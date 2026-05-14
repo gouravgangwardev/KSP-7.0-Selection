@@ -1,4 +1,4 @@
-# theory/ — Scientific Narrative & Derivation Framework
+# Scientific Narrative & Derivation Framework
 
 > *"A good derivation is a story. Every equation should feel inevitable."*
 
